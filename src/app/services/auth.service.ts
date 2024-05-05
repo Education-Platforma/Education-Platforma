@@ -1,15 +1,20 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { jwtDecode } from 'jwt-decode';
+import { Observable, map } from 'rxjs';
+import { ResponseModel } from '../models/response-model';
+import { Coupon } from '../models/coupon';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  private apiUrl = 'https://edu-api.tohirjon.uz/api/';
   decodedToken: any;
   tokenKey = 'token';
   role: string = '';
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   decodeToken(): any {
     try {
@@ -35,5 +40,10 @@ export class AuthService {
       return false;
     }
   }
+
+
+
+
+
 
 }
