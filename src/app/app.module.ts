@@ -27,6 +27,7 @@ import { CategoryComponent } from './components/admin/category/category.componen
 import { CouponComponent } from './components/admin/coupon/coupon.component';
 import { CourseComponent } from './components/admin/course/course.component';
 import { LessonComponent } from './components/admin/lesson/lesson.component';
+// import { MessageComponent } from './components/admin/coupon/message.component';
 import { MessageComponent } from './components/admin/message/message.component';
 import { QuestionComponent } from './components/admin/question/question.component';
 import { UserComponent } from './components/admin/user/user.component';
@@ -34,6 +35,8 @@ import { UserActivityComponent } from './components/admin/user-activity/user-act
 import { VideoComponent } from './components/admin/video/video.component';
 import { QuizCRUDComponent } from './components/admin/quiz-crud/quiz-crud.component';
 import { AdminAsideComponent } from './components/admin/admin-aside/admin-aside.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -73,7 +76,9 @@ import { AdminAsideComponent } from './components/admin/admin-aside/admin-aside.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterLink
+    RouterLink,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

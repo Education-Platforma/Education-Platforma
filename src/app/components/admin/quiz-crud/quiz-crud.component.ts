@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './quiz-crud.component.scss'
 })
 export class QuizCRUDComponent {
+title = "";
+courseId = "";
 
+submit() {
+  this.title = "";
+}
 }
