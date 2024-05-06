@@ -6,7 +6,8 @@ import { Observable, map } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-
+  users: any;
+  user: any;
   private apiUrl = 'https://edu-api.tohirjon.uz/api/';
   constructor(private http: HttpClient) {}
 
@@ -20,6 +21,14 @@ export class UserService {
         return response;
       })
     )
+  }
+
+  getUserByName(userFronToken: any): Observable<any> {
+      this.users = this.getAllUsers();
+      this.users.subscribe((res: any[]) => {
+        this.user = res.find((user: { userName: any; }) => user.userName === userFronToken.UserName);
+      })
+      return this.user;
   }
 
 

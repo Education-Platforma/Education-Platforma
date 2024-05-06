@@ -14,10 +14,8 @@
         <input type="text" name="fullname" id="fullname" [(ngModel)] ="expForWaatching" placeholder="Exp for waatching" autofill="autofill">
         <label for="fullname">Exp for waatching</label>
       </div>        
-      <div class="field">
-        <input type="file" name="fullname" id="fullname" [(ngModel)] ="videoFile" (change)="handleFileSelect($event)" placeholder="video" autofill="autofill">
-        <label for="fullname">Video</label>
-      </div>        
+      <input type="file" onchange="upload(event)" accept="image/*" width="300" height="300" />
+
       <button class="submit-button" (click)="submit()">Submit</button>
     </div>
   </section>
